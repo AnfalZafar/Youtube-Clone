@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -91,64 +91,69 @@
         background: rgb(242, 242, 242);
     }
 }
+
 /* mobile navbar */
 
-.mobile_navbar{
+.mobile_navbar {
     width: 100%;
     height: 50px;
     display: none;
     align-items: center;
     justify-content: center;
-    background:whitesmoke;
+    background: whitesmoke;
     position: fixed;
     bottom: 0;
 
 }
-.mobile_navbar ul{
+
+.mobile_navbar ul {
     width: 100%;
     display: flex;
     justify-content: space-around;
 
 }
-.mobile_navbar ul li{
+
+.mobile_navbar ul li {
     list-style: none;
 }
-.mobile_navbar ul li a button{
-border: none;
-border-radius: 5px;
-cursor: pointer;
-width: 75px;
-height: 30px;
-background: none;
+
+.mobile_navbar ul li a button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 75px;
+    height: 30px;
+    background: none;
 }
 
-@media(max-width:730px){
-    .mobile_navbar{
+@media(max-width:900px) {
+    .mobile_navbar {
         width: 100%;
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background:whitesmoke;
+        background: whitesmoke;
         position: fixed;
         bottom: 0;
-    
+
     }
 }
-@media(max-width:400px){
-    .mobile_navbar ul li a button{
+
+@media(max-width:400px) {
+    .mobile_navbar ul li a button {
         border: none;
         border-radius: 5px;
         cursor: pointer;
         width: 65px;
         height: 25px;
         background: none;
-        }
+    }
 }
 
 /* mobile navbar end */
 
-.main_container{
+.main_container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -157,31 +162,35 @@ background: none;
 
 /* header */
 
-header{
+header {
     width: 100%;
     height: 55px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-around;
     padding-right: 1rem;
 }
-header .logo{
+
+header .logo {
     width: 8%;
     height: 80px;
     text-decoration: none;
 }
-header .logo img{
+
+header .logo img {
     width: 100%;
     height: 100%;
 }
-header .search_bar{
+
+header .search_bar {
     width: 60%;
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-header .search_bar .search{
+
+header .search_bar .search {
     width: 60%;
     height: 100%;
     border: 1px solid #000;
@@ -191,7 +200,8 @@ header .search_bar .search{
     display: flex;
     overflow: hidden;
 }
-header .search_bar .search input{
+
+header .search_bar .search input {
     width: 100%;
     height: 100%;
     border: none;
@@ -200,15 +210,17 @@ header .search_bar .search input{
     outline: none;
     background: none;
 }
-header .search_bar .search button{
+
+header .search_bar .search button {
     width: 15%;
     height: 100%;
     border: none;
     cursor: pointer;
 }
-header .profile{
+
+header .profile {
     width: 45px;
-    height:40px;
+    height: 40px;
     border: none;
     border-radius: 50%;
     background: none;
@@ -216,11 +228,13 @@ header .profile{
     cursor: pointer;
     display: block;
 }
-header .profile img{
+
+header .profile img {
     width: 100%;
     height: 100%;
 }
-header .Login{
+
+header .Login {
     width: 65px;
     height: 30px;
     cursor: pointer;
@@ -229,17 +243,19 @@ header .Login{
     border: none;
     display: none;
 }
-header .Login button{
+
+header .Login button {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    background: rgb(242,242,242);
+    background: rgb(242, 242, 242);
     color: #000;
 }
-@media(max-width:1000px){
-    header .search_bar .search{
+
+@media(max-width:1000px) {
+    header .search_bar .search {
         width: 100%;
         height: 100%;
         border: 1px solid #000;
@@ -250,8 +266,9 @@ header .Login button{
         overflow: hidden;
     }
 }
-@media(max-width:850px){
-    header .search_bar .search{
+
+@media(max-width:850px) {
+    header .search_bar .search {
         width: 90%;
         height: 100%;
         border: 1px solid #000;
@@ -261,14 +278,16 @@ header .Login button{
         display: flex;
         overflow: hidden;
     }
-    header .logo{
+
+    header .logo {
         width: 6%;
         height: 60px;
         text-decoration: none;
     }
 }
-@media(max-width:500px){
-    header .search_bar .search{
+
+@media(max-width:500px) {
+    header .search_bar .search {
         width: 100%;
         height: 100%;
         border: 1px solid #000;
@@ -282,148 +301,208 @@ header .Login button{
 
 /* end header */
 
-.mian_content{
+.mian_content {
     width: 100%;
     display: flex;
     padding-top: 2rem;
+    
 }
+
 /* Side Bar */
 
-.side_bar{
-width: 20%;
-height: 100vh;
-padding: 2rem 0.3rem; 
-position: sticky;
-top: 0;
-bottom: 0;
+.side_bar {
+    width: 20%;
+    height: 100vh;
+    padding: 2rem 0.3rem;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    display: block;
 }
-.side_bar .icon{
+
+.side_bar .icon {
     width: 100%;
-    margin:2.5rem 0px;
+    margin: 2.5rem 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.side_bar .icon a{
+
+.side_bar .icon a {
     text-decoration: none;
     color: #000;
 }
-.side_bar .icon a button{
+
+.side_bar .icon a button {
     width: 120px;
     height: 45px;
-    background:none;
+    background: none;
     font-weight: 100px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
     font-size: 1rem;
 }
-.side_bar .icon a button:hover{
-    background: rgb(242,242,242);
+
+.side_bar .icon a button:hover {
+    background: rgb(242, 242, 242);
 }
-@media(max-width:730px){
-    .side_bar{
+
+@media(max-width:900px) {
+    .side_bar {
         width: 20%;
         height: 100vh;
-        padding: 2rem 0.3rem; 
+        padding: 2rem 0.3rem;
         position: sticky;
         top: 0;
         bottom: 0;
         display: none;
-        }
+    }
 }
 
 
-/* create */
+/* main */
 
-.create{
+.main {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
-.create form{
+
+
+/* main_defaul_video */
+
+.main .main_defaul_video {
     width: 100%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+.main .main_defaul_video .first_card {
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+    margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.main .main_defaul_video .first_card .first_card_img {
+    width: 25%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.main .main_defaul_video .first_card .first_card_img img {
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.main .main_defaul_video .first_card .first_card_content {
+    width: 45%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
     flex-direction: column;
 }
-.create form .title{
+
+.main .main_defaul_video .first_card .content_descript {
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 2rem 0;
-
 }
-.create form .title textarea{
-    padding-left:1rem;
-    padding-right:1rem;
-    padding-top: 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
+
+.main .main_defaul_video .first_card .content_descript p {
+    color: #000;
     font-weight: bold;
 }
-.create form .create_img{
+
+.main .main_defaul_video .first_card .content_name {
     width: 100%;
-    height: 35px;
-    margin: 1rem 0;
+    padding: 0.3rem 0;
+    color: rgb(96, 96, 96);
+
+}
+
+.main .main_defaul_video .first_card .content_likes {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 0.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
-.create form .create_img input{
-    width: 50%;
-    height: 100%;
-    align-items: center;
-    margin: auto;
-    border: 1px solid #000;
-}
-.create form .create_btn{
-    width: 10%;
-    height: 35px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 1rem;
-}
-.create form .create_btn button{
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background: #000;
-    color: #fff;
-}
-@media(max-width:650px){
-    .create form .create_img input{
-        width: 60%;
+
+@media(max-width:900px){
+    .main {
+        width: 100%;
         height: 100%;
-        align-items: center;
-        margin: auto;
-        border: 1px solid #000;
+        display: flex;
+        align-items: start;
+        justify-content: flex-start;
+        flex-direction: column;
     }
-    .create form .create_btn{
-        width: 15%;
-        height: 35px;
-        border: none;
-        border-radius: 10px;
-        margin-top: 1rem;
+    .main .main_defaul_video {
+        width: 100%;
+        padding-top: 1rem;
+    }
+    .main .main_defaul_video .first_card {
+        width: 100%;
+        overflow: hidden;
+        text-decoration: none;
+        color: #000;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .main .main_defaul_video .first_card .first_card_img {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
-@media(max-width:500px){
-    .create form .create_img input{
-        width: 70%;
-        height: 100%;
-        align-items: center;
-        margin: auto;
-        border: 1px solid #000;
-    }
-    .create form .create_btn{
-        width: 20%;
-        height: 35px;
-        border: none;
-        border-radius: 10px;
-        margin-top: 1rem;
+@media(max-width:600px){
+    .main_videoplay .videoplay_img {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        display: flex;
+        align-items: start;
+        justify-content: center;
     }
 }
+@media (max-width:500px){
+    .main .main_defaul_video .first_card .first_card_img {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width:300px){
+    .main_videoplay .videoplay_img {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+    .main .main_defaul_video .first_card .first_card_img {
+        width: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+

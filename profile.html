@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Youtube</title>
     <link rel="icon" type="image/x-icon" href="img/youtube-logo-hd-8-removebg-preview.png">
-    <link rel="stylesheet" href="css/create.css">
+    <link rel="stylesheet" href="css/profile.css">
     <script src="https://kit.fontawesome.com/decf226a92.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,40 +16,38 @@
 
     <div class="mobile_navbar">
         <ul>
-            <li><a href="index.html"><button>Home</button></a></li>
+            <li><a href="index.html"><button style="background: rgb(234, 230, 230);">Home</button></a></li>
             <li><a href="subscribe.html"><button>Subscribe</button></a></li>
-            <li><a href="create.html"><button style="background: rgb(234, 230, 230);">Create</button></a></li>
+            <li><a href="create.html"><button>Create</button></a></li>
             <li><a href="you.html"><button>You</button></a></li>
         </ul>
     </div>
 
-    <!-- mobile navbar end -->
 
     <div class="main_container">
 
-        <!-- header -->
+       <!-- header -->
 
-        <header>
+       <header>
 
-            <a href="youtube.html" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
+        <a href="youtube.html" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
 
-            <div class="search_bar">
-                <form method="post" class="search">
-                    <input type="search" name="" placeholder="Search" id="">
-                    <button name=""><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
+        <div class="search_bar">
+            <form method="post" class="search">
+                <input type="search" name="" placeholder="Search" id="">
+                <button name=""><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
 
-            <div class="profile">
-                <a href="you.html"><img src="img/manimg.webp" alt=""></a>
-            </div>
-            <div class="Login">
-                <button>Sign In</button>
-            </div>
+        <div class="profile">
+            <a href="you.html"><img src="img/manimg.webp" alt=""></a>
+        </div>
+        <div class="Login">
+            <button>Sign In</button>
+        </div>
 
 
-        </header>
-
+    </header>
         <!-- Main -->
 
         <div class="mian_content">
@@ -57,8 +55,9 @@
             <!-- Side Bar -->
 
             <div class="side_bar">
+
                 <div class="icon">
-                    <a href="youtube.html"><button>Home</button></a>
+                    <a href="youtube.html"><button style="background: rgb(242,242,242);">Home</button></a>
                 </div>
 
                 <div class="icon">
@@ -66,7 +65,7 @@
                 </div>
 
                 <div class="icon">
-                    <a href="create.html"><button style="background: rgb(242,242,242);">Create</button></a>
+                    <a href="create.html"><button>Create</button></a>
                 </div>
 
                 <div class="icon">
@@ -76,21 +75,25 @@
 
             </div>
 
-            <!-- create Content -->
 
-            <div class="create">
-                <form method="post" enctype="multipart/form-data">
+            <!-- Main Content -->
 
-                    <div class="title">
-                        <textarea type="text" name="" placeholder="Enter Your Title" maxlength="55" rows="4"
-                            cols="50"></textarea>
+            <div class="container">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="input">
+                        <input type="text" name="" value="">
                     </div>
-                    <div class="create_img">
-                        <input type="file" name="">
+                    <div class="input">
+                        <input type="email" name="" value="">
                     </div>
-                    <div class="create_btn">
-                        <button name="">Submit</button>
+                    <div class="input">
+                        <input type="file" name="" value="">
                     </div>
+                    <div class="form_btn">
+                        <button name="">Edit</button>
+                    </div>
+
+
 
                 </form>
             </div>
@@ -100,10 +103,9 @@
 
     </div>
 
+<!-- serach bar output -->
 
-  <!-- serach bar output -->
-
-  <div class="serach_output">
+<div class="serach_output">
     <div class="output_name">
 
         <div class="o_name">
@@ -125,7 +127,6 @@
 
     </div>
 </div>
-
 
 
 </body>
