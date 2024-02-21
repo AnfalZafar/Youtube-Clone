@@ -1,3 +1,14 @@
+<?php
+
+include("connection.php");
+session_start();
+
+if(!isset($_SESSION['id'])){
+
+    header("location:index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +27,10 @@
 
     <div class="mobile_navbar">
         <ul>
-            <li><a href="index.html"><button>Home</button></a></li>
-            <li><a href="subscribe.html"><button>Subscribe</button></a></li>
-            <li><a href="create.html"><button>Create</button></a></li>
-            <li><a href="you.html"><button style="background: rgb(242,242,242);">You</button></a></li>
+            <li><a href="index.php"><button>Home</button></a></li>
+            <li><a href="subscribe.php"><button>Subscribe</button></a></li>
+            <li><a href="create.php"><button>Create</button></a></li>
+            <li><a href="you.php"><button style="background: rgb(242,242,242);">You</button></a></li>
         </ul>
     </div>
 
@@ -31,7 +42,7 @@
 
         <header>
 
-            <a href="youtube.html" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
+            <a href="youtube.php" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
 
             <div class="search_bar">
                 <div class="search">
@@ -41,7 +52,7 @@
             </div>
 
             <div class="profile">
-                <a href="you.html"><img src="img/manimg.webp" alt=""></a>
+                <a href="you.php"><img src="img/manimg.webp" alt=""></a>
             </div>
             <div class="Login">
                 <button>Sign In</button>
@@ -59,19 +70,19 @@
             <div class="side_bar">
 
                 <div class="icon">
-                    <a href="youtube.html"><button>Home</button></a>
+                    <a href="youtube.php"><button>Home</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="subscribe.html"><button>Subscribe</button></a>
+                    <a href="subscribe.php"><button>Subscribe</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="create.html"><button>Create</button></a>
+                    <a href="create.php"><button>Create</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="you.html"><button>You</button></a>
+                    <a href="you.php"><button>You</button></a>
                 </div>
 
 

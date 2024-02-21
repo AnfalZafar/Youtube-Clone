@@ -1,3 +1,14 @@
+<?php
+
+include("connection.php");
+session_start();
+
+if(!isset($_SESSION['id'])){
+
+    header("location:index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Youtube</title>
     <link rel="icon" type="image/x-icon" href="img/youtube-logo-hd-8-removebg-preview.png">
-    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/search.css">
     <script src="https://kit.fontawesome.com/decf226a92.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,10 +27,10 @@
 
     <div class="mobile_navbar">
         <ul>
-            <li><a href="index.html"><button>Home</button></a></li>
-            <li><a href="subscribe.html"><button>Subscribe</button></a></li>
-            <li><a href="create.html"><button>Create</button></a></li>
-            <li><a href="you.html"><button style="background: rgb(242,242,242);">You</button></a></li>
+            <li><a href="index.php"><button>Home</button></a></li>
+            <li><a href="subscribe.php"><button>Subscribe</button></a></li>
+            <li><a href="create.php"><button>Create</button></a></li>
+            <li><a href="you.php"><button style="background: rgb(242,242,242);">You</button></a></li>
         </ul>
     </div>
 
@@ -31,7 +42,7 @@
 
         <header>
 
-            <a href="youtube.html" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
+            <a href="youtube.php" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
 
             <div class="search_bar">
                 <form method="post" class="search">
@@ -41,7 +52,7 @@
             </div>
 
             <div class="profile">
-                <a href="you.html"><img src="img/manimg.webp" alt=""></a>
+                <a href="you.php"><img src="img/manimg.webp" alt=""></a>
             </div>
             <div class="Login">
                 <button>Sign In</button>
@@ -59,19 +70,19 @@
             <div class="side_bar">
 
                 <div class="icon">
-                    <a href="youtube.html"><button>Home</button></a>
+                    <a href="youtube.php"><button>Home</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="subscribe.html"><button>Subscribe</button></a>
+                    <a href="subscribe.php"><button>Subscribe</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="create.html"><button>Create</button></a>
+                    <a href="create.php"><button>Create</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="you.html"><button style="background: rgb(242,242,242);">You</button></a>
+                    <a href="you.php"><button>You</button></a>
                 </div>
 
 
@@ -81,44 +92,6 @@
             <!-- Main Content -->
 
             <div class="main">
-
-                <!-- video play -->
-
-                <div class="main_videoplay">
-
-                    <div class="videoplay_img">
-                        <img src="img/ronaldo.jpg" alt="">
-                    </div>
-
-                    <div class="videoplay_commit">
-
-                        <div class="videoplay_detail">
-
-                            <div class="videoplay_detail_title">
-                                <h2>This Is the Web Developing Video</h2>
-                            </div>
-
-                            <div class="videoplay_detail_img">
-                                <img src="img/manimg.webp" alt="">
-
-                                <div class="videoplay_detail_img_name">
-                                    <h4>Anfal Coder</h4>
-                                    <p>120 Subscriber</p>
-                                </div>
-
-                                <div class="videoplay_detail_img_btn">
-                                    <a href=""><button>Subscribe</button></a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="main_videoplay_commit">
-                            <p>Like</p>
-                        </div>
-
-                    </div>
-                </div>
 
                 <!-- video play end -->
 
@@ -131,7 +104,7 @@
                         <div class="first_card_content">
 
                             <div class="content_descript">
-                                <h5>Hello This is my first video Hello This is my first video</h5>
+                                <h3>Hello This is my first video Hello This is my first video</h3>
                             </div>
                             <div class="content_name">
                                 <p class="like">Anfal Zafar</p>

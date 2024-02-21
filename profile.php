@@ -1,3 +1,13 @@
+<?php
+
+include("connection.php");
+session_start();
+
+if(!isset($_SESSION['id'])){
+
+    header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +26,10 @@
 
     <div class="mobile_navbar">
         <ul>
-            <li><a href="index.html"><button style="background: rgb(234, 230, 230);">Home</button></a></li>
-            <li><a href="subscribe.html"><button>Subscribe</button></a></li>
-            <li><a href="create.html"><button>Create</button></a></li>
-            <li><a href="you.html"><button>You</button></a></li>
+            <li><a href="index.php"><button style="background: rgb(234, 230, 230);">Home</button></a></li>
+            <li><a href="subscribe.php"><button>Subscribe</button></a></li>
+            <li><a href="create.php"><button>Create</button></a></li>
+            <li><a href="you.php"><button>You</button></a></li>
         </ul>
     </div>
 
@@ -30,7 +40,7 @@
 
        <header>
 
-        <a href="youtube.html" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
+        <a href="youtube.php" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
 
         <div class="search_bar">
             <form method="post" class="search">
@@ -40,7 +50,7 @@
         </div>
 
         <div class="profile">
-            <a href="you.html"><img src="img/manimg.webp" alt=""></a>
+            <a href="you.php"><img src="img/manimg.webp" alt=""></a>
         </div>
         <div class="Login">
             <button>Sign In</button>
@@ -57,19 +67,19 @@
             <div class="side_bar">
 
                 <div class="icon">
-                    <a href="youtube.html"><button style="background: rgb(242,242,242);">Home</button></a>
+                    <a href="youtube.php"><button style="background: rgb(242,242,242);">Home</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="subscribe.html"><button>Subscribe</button></a>
+                    <a href="subscribe.php"><button>Subscribe</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="create.html"><button>Create</button></a>
+                    <a href="create.php"><button>Create</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="you.html"><button>You</button></a>
+                    <a href="you.php"><button>You</button></a>
                 </div>
 
 
@@ -79,18 +89,25 @@
             <!-- Main Content -->
 
             <div class="container">
-                <form action="" method="post" enctype="multipart/form-data">
+                <?php
+                $id =  $_SESSION["id"];
+                $select = "SELECT * FROM `users` WHERE `users_id` = '$id' ";
+                $run = mysqli_query($connect, $select);
+                $fetch = mysqli_fetch_array($run);
+                
+                ?>
+                <form action="update.php" method="post" enctype="multipart/form-data">
                     <div class="input">
-                        <input type="text" name="" value="">
+                        <input type="text" name="e_name" value="<?php echo $fetch["users_name"]?>">
                     </div>
                     <div class="input">
-                        <input type="email" name="" value="">
+                        <input type="email" name="e_email" value="<?php echo $fetch["users_email"]?>">
                     </div>
                     <div class="input">
-                        <input type="file" name="" value="">
+                        <input type="file" name="e_img" value="<?php echo $fetch["users_img"]?>">
                     </div>
                     <div class="form_btn">
-                        <button name="">Edit</button>
+                        <button name="e_btn">Edit</button>
                     </div>
 
 

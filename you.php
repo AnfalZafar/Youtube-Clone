@@ -1,3 +1,14 @@
+<?php
+
+include("connection.php");
+session_start();
+
+if(!isset($_SESSION['id'])){
+
+    header("location:index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +27,10 @@
 
     <div class="mobile_navbar">
         <ul>
-            <li><a href="index.html"><button>Home</button></a></li>
-            <li><a href="subscribe.html"><button>Subscribe</button></a></li>
-            <li><a href="create.html"><button>Create</button></a></li>
-            <li><a href="you.html"><button style="background: rgb(242,242,242);">You</button></a></li>
+            <li><a href="index.php"><button>Home</button></a></li>
+            <li><a href="subscribe.php"><button>Subscribe</button></a></li>
+            <li><a href="create.php"><button>Create</button></a></li>
+            <li><a href="you.php"><button style="background: rgb(242,242,242);">You</button></a></li>
         </ul>
     </div>
 
@@ -27,28 +38,46 @@
 
     <div class="main_container">
 
-      <!-- header -->
+        <!-- header -->
 
-      <header>
+        <header>
 
-        <a href="youtube.html" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
+            <a href="youtube.php" class="logo"><img src="img/youtube-logo-hd-8-removebg-preview.png" alt=""></a>
 
-        <div class="search_bar">
-            <form method="post" class="search">
-                <input type="search" name="" placeholder="Search" id="">
-                <button name=""><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
+            <div class="search_bar">
+                <form method="post" class="search">
+                    <input type="search" name="" placeholder="Search" id="">
+                    <button name=""><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
 
-        <div class="profile">
-            <a href="you.html"><img src="img/manimg.webp" alt=""></a>
-        </div>
-        <div class="Login">
-            <button>Sign In</button>
-        </div>
+            <div class="profile">
+                <?php
+                $id = $_SESSION["id"];
+                $select = "SELECT * FROM `users` WHERE `users_id` = '$id' ";
+                $run = mysqli_query($connect, $select);
+                $fetch = mysqli_fetch_array($run);
 
 
-    </header>
+
+                if ($fetch["users_img"] != null) {     ?>
+                    <a href="you.php"><img src="img/<?php echo $fetch["users_img"] ?>" alt=""></a>
+               
+                <?php
+                }else{?>
+                                    <a href="you.php"><img src="img/a.jpg" alt=""></a>
+
+<?php
+                }
+                ?>
+
+            </div>
+            <div class="Login">
+                <button>Sign In</button>
+            </div>
+
+
+        </header>
         <!-- Main -->
 
         <div class="mian_content">
@@ -58,19 +87,19 @@
             <div class="side_bar">
 
                 <div class="icon">
-                    <a href="youtube.html"><button>Home</button></a>
+                    <a href="youtube.php"><button>Home</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="subscribe.html"><button >Subscribe</button></a>
+                    <a href="subscribe.php"><button>Subscribe</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="create.html"><button>Create</button></a>
+                    <a href="create.php"><button>Create</button></a>
                 </div>
 
                 <div class="icon">
-                    <a href="you.html"><button style="background: rgb(242,242,242);">You</button></a>
+                    <a href="you.php"><button style="background: rgb(242,242,242);">You</button></a>
                 </div>
 
 
@@ -80,20 +109,27 @@
             <div class="main_main">
 
                 <!-- you img -->
+<?php
+  $id =  $_SESSION["id"];
+  $select = "SELECT * FROM `users` WHERE `users_id` = '$id' ";
+  $run = mysqli_query($connect, $select);
+  $fetch = mysqli_fetch_array($run);
 
+
+?>
                 <div class="you_img">
                     <div class="you_img_pro">
-                    <img src="img/ronaldo2.jpg" alt="">
+                        <img src="img/<?php echo $fetch["users_img"]?>" alt="">
 
-                    <div class="you_img_names">
-                        <h1>Anfal Zafar</h1>
-                        <p>anfalafridi@gmail.com</p>
-                        <a href=""><button>Log Out</button></a>
+                        <div class="you_img_names">
+                            <h1><?php echo $fetch["users_name"]?></h1>
+                            <p><?php echo $fetch["users_email"]?></p>
+                            <a href="logout.php"><button>Log Out</button></a>
+                        </div>
                     </div>
-                </div>
-                <div class="you_edit">
-                    <a href="profile.html"><button>Edit Profile</button></a>
-                </div>
+                    <div class="you_edit">
+                        <a href="profile.php"><button>Edit Profile</button></a>
+                    </div>
 
                 </div>
 
@@ -114,7 +150,7 @@
                         <div class="first_card_content">
 
                             <div class="content_descript">
-                                <a href="user_view.html"><img src="img/manimg.webp" alt=""></a>
+                                <a href="user_view.php"><img src="img/manimg.webp" alt=""></a>
                                 <p>Hello This is my first video Hello This is my first video</p>
                             </div>
                             <div class="content_likes">
@@ -261,30 +297,30 @@
     </div>
 
 
-  <!-- serach bar output -->
+    <!-- serach bar output -->
 
-  <div class="serach_output">
-    <div class="output_name">
+    <div class="serach_output">
+        <div class="output_name">
 
-        <div class="o_name">
-            <h4>How to make youtube video and thumbline</h4>
+            <div class="o_name">
+                <h4>How to make youtube video and thumbline</h4>
+            </div>
+
+            <div class="o_name">
+                <h4>How to make youtube video and thumbline</h4>
+            </div>
+
+            <div class="o_name">
+                <h4>How to make youtube video and thumbline</h4>
+            </div>
+
+            <div class="o_name">
+                <h4>How to make youtube video and thumbline</h4>
+            </div>
+
+
         </div>
-
-        <div class="o_name">
-            <h4>How to make youtube video and thumbline</h4>
-        </div>
-
-        <div class="o_name">
-            <h4>How to make youtube video and thumbline</h4>
-        </div>
-
-        <div class="o_name">
-            <h4>How to make youtube video and thumbline</h4>
-        </div>
-
-
     </div>
-</div>
 
 
 
