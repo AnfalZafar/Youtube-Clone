@@ -472,7 +472,7 @@ bottom: 0;
     align-items: center;
     justify-content: center;
 }
-.main .first_card .first_card_img img{
+.main .first_card .first_card_img video{
     width: 95%;
     height: 100%;
     border-radius: 10px;

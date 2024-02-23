@@ -13,7 +13,7 @@ if (isset($_POST["s_btn"])) {
     $select = "SELECT * FROM `users`";
     $run = mysqli_query($connect, $select);
     $fetch = mysqli_fetch_array($run);
-    if ($fetch["users_email"] == $email & $fetch["users_password"] == $pass) {
+    if ($fetch["users_email"] == $email && $fetch["users_password"] == $pass) {
         $_SESSION["id"] = $fetch["users_id"];
         $_SESSION["name"] = $fetch["users_name"];
         $_SESSION["email"] = $fetch["users_email"];

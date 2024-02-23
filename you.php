@@ -143,15 +143,30 @@ if(!isset($_SESSION['id'])){
 
                 <div class="main">
 
-                    <div class="first_card">
+                <?php 
+                $id = $_SESSION["id"];
+                $select = "SELECT * FROM `post` WHERE `users_foren` = $id";
+                $run = mysqli_query($connect, $select);
+                while($data = mysqli_fetch_array($run)){
+                    $user_id = $data["users_foren"];
+                    $select_users = "SELECT * FROM `users` WHERE `users_id` = $user_id";
+                    $con = mysqli_query($connect , $select_users);
+                    $fetch = mysqli_fetch_array($con);
+                    
+                    ?>
+                
+                <div class="first_card">
                         <a href="" class="first_card_img">
-                            <img src="img/manimg.webp" alt="">
+                          <video controls  style="width: 95%;height:95%;">
+
+                          <source src="<?php echo $data["post_video"]?>">
+                          </video>
                         </a>
                         <div class="first_card_content">
 
                             <div class="content_descript">
-                                <a href="user_view.php"><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
+                                <a href="user_view.php?id=<?php echo $data["post_id"] ?>"><img src="img/<?php echo $fetch["users_img"]?>" alt=""></a>
+                                <p><?php echo $data["post_title"]?></p>
                             </div>
                             <div class="content_likes">
                                 <p class="like">100 Likes</p>
@@ -161,131 +176,11 @@ if(!isset($_SESSION['id'])){
                         </div>
                     </div>
 
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/10.PNG" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/8.PNG" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/ronaldo.jpg" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/manimg.webp" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/Capture.PNG" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/manimg.webp" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="first_card">
-                        <a href="" class="first_card_img">
-                            <img src="img/ronaldo2.jpg" alt="">
-                        </a>
-                        <div class="first_card_content">
-
-                            <div class="content_descript">
-                                <a href=""><img src="img/manimg.webp" alt=""></a>
-                                <p>Hello This is my first video Hello This is my first video</p>
-                            </div>
-                            <div class="content_likes">
-                                <p class="like">100 Likes</p>
-                                <p class="view">1000 Views</p>
-                            </div>
-
-                        </div>
-                    </div>
+            
+            <?php
+            }
+                ?>
+                   
 
                 </div>
 

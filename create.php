@@ -1,6 +1,6 @@
 <?php
 
-include("connection.php");
+include "connection.php";
 
 session_start();
 
@@ -12,9 +12,8 @@ if (!isset($_SESSION['id'])) {
 if(isset($_POST["p_btn"])){
     $user_id = $_SESSION["id"];
     $title = $_POST["p_title"];
-    $video_name = $_FILES["p_video"]["name"];
-    $video_file = $_FILES["p_video"]["tmp_name"];
-    $target = "video/" .basename($video_name);
+    $video_name ="video/" . $_FILES["p_video"]['name'];
+    move_uploaded_file($_FILES['p_video']['tmp_name'] ,$video_name);
     
     $insert = "INSERT INTO `post`(`post_title`, `post_video`, `users_foren`) VALUES ('$title','$video_name','$user_id')";
     $run = mysqli_query($connect , $insert);
@@ -134,7 +133,7 @@ if(isset($_POST["p_btn"])){
                         <textarea type="text" name="p_title" placeholder="Enter Your Title" maxlength="55" rows="4" cols="50"></textarea>
                     </div>
                     <div class="create_img">
-                        <input type="file" name="p_video">
+                        <input type="file" name="p_video" accept="video/*">
                     </div>
                     <div class="create_btn">
                         <button name="p_btn">Submit</button>
